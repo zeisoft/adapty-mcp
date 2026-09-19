@@ -268,3 +268,6 @@ The full catalogue, with what each one can do today, is at [heymetra.com/connect
 ---
 
 <sub>This README is generated from HeyMetra's live connector catalogue and refreshed daily; it is committed only when something in it actually changed. Corrections are welcome as issues. Built by <a href="https://zeisoft.com">Zeisoft</a>.</sub>
+
+
+STALE LINE PLANTED TO TEST THE REFRESH
