@@ -1,27 +1,27 @@
-# Adapty MCP server — through HeyMetra
+<div align="center">
 
-> **Unofficial.** This is not Adapty's own MCP server and this repository is not affiliated with, endorsed by or supported by Adapty. It documents how [HeyMetra](https://heymetra.com/), a remote MCP server built by Zeisoft, reads Adapty.
+<img src="assets/cover.png" alt="Adapty through HeyMetra's MCP server" width="100%">
+
+# Adapty &times; HeyMetra
 
 **Subscription revenue, MRR, trials and refunds over any range.**
+
+Your subscription revenue lives in Adapty. What you paid to get those subscribers does not. Ask about both in the same sentence.
 
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-com.heymetra%2Fheymetra-1f6feb)](https://registry.modelcontextprotocol.io/v0/servers/com.heymetra%2Fheymetra/versions)
 [![Transport](https://img.shields.io/badge/transport-Streamable_HTTP-444)](https://modelcontextprotocol.io/)
 [![Auth](https://img.shields.io/badge/auth-OAuth_2.1-444)](https://heymetra.com/security/)
 [![Connector page](https://img.shields.io/badge/heymetra.com-adapty-1f6feb)](https://heymetra.com/connectors/adapty/)
 
+```
+https://mcp.heymetra.com/mcp
+```
+
+</div>
+
 ---
 
-## What Adapty is
-
-Adapty runs mobile in-app subscriptions and paywall analytics — revenue, conversion, retention, and paywall A/B tests across iOS and Android. It’s where subscription growth and paywall performance are measured.
-
-## What HeyMetra reads from Adapty
-
-Connect with each app's secret key — an Adapty key belongs to one app, so a portfolio is one connection per app — and your MCP client gets three tools: one headline call — revenue, MRR, active subscriptions and new trials for a period — and one that returns a single metric as a total plus a day-by-day series: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscription and trial counts by lifecycle event, refunds, and installs. One more compares every connected app on a single metric — which app earns what — with a total per currency and any app that could not answer named rather than dropped. Paywall and A/B figures are not among the metrics HeyMetra reads today. Revenue is dated by transaction and sits before the store's fee, so an answer states which basis it used rather than letting you compare it with cohort-based ad figures by accident. Read-only: no tool changes your Adapty configuration.
-
-## What you can ask
-
-Once connected, in your own assistant, in plain language:
+## Ask it things like
 
 > How did subscription revenue move day by day this month?
 
@@ -33,26 +33,7 @@ Once connected, in your own assistant, in plain language:
 
 > Which of my apps is making the most MRR?
 
-## Permissions
-
-You switch these on per connection, and a permission you leave off is a tool your assistant never sees.
-
-| Permission | What it covers | Changes anything? |
-|---|---|---|
-| **Metrics** | Read subscription, trial and install counts. | No, read only |
-| **Revenue** | Read the money figures: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU and refunded amounts. | No, read only |
-
-<details>
-<summary>What each permission lets an assistant do, in full</summary>
-
-- Compares every connected app of yours over one date range on one subscription figure, with a total per currency. No subscriber is named.
-- Reads one subscription figure over a date range — revenue, MRR, ARR, ARPU, active, new or expired subscriptions, trials, refunds or installs.
-- Reads the headline subscription picture for a period: revenue, MRR, active subscriptions and new trials.
-</details>
-
-## What it can change
-
-- Adapty is a read-only source — HeyMetra reads it to answer questions and never changes the account.
+No dashboard, no export, no query language. You ask in the assistant you already use and the answer comes back with the account it came from.
 
 ## Connect Adapty
 
@@ -191,6 +172,25 @@ _The key is serverUrl, not url — the one every other JSON client spells differ
 Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antigravity/)
 </details>
 
+## What it may and may not touch
+
+Adapty is a read-only source — HeyMetra reads it to answer questions and never changes the account.
+
+Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
+
+| Permission | What it covers | Changes anything? |
+|---|---|---|
+| **Metrics** | Read subscription, trial and install counts. | No, read only |
+| **Revenue** | Read the money figures: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU and refunded amounts. | No, read only |
+
+<details>
+<summary>What each permission lets an assistant do, in full</summary>
+
+- Compares every connected app of yours over one date range on one subscription figure, with a total per currency. No subscriber is named.
+- Reads one subscription figure over a date range — revenue, MRR, ARR, ARPU, active, new or expired subscriptions, trials, refunds or installs.
+- Reads the headline subscription picture for a period: revenue, MRR, active subscriptions and new trials.
+</details>
+
 ## When something goes wrong
 
 <details>
@@ -238,9 +238,19 @@ Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antig
 
 </details>
 
-## Everything else HeyMetra reads
+## What HeyMetra reads from Adapty
 
-One connection answers across accounts — which is the point, because spend lives in one place and revenue in another:
+Connect with each app's secret key — an Adapty key belongs to one app, so a portfolio is one connection per app — and your MCP client gets three tools: one headline call — revenue, MRR, active subscriptions and new trials for a period — and one that returns a single metric as a total plus a day-by-day series: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscription and trial counts by lifecycle event, refunds, and installs. One more compares every connected app on a single metric — which app earns what — with a total per currency and any app that could not answer named rather than dropped. Paywall and A/B figures are not among the metrics HeyMetra reads today. Revenue is dated by transaction and sits before the store's fee, so an answer states which basis it used rather than letting you compare it with cohort-based ad figures by accident. Read-only: no tool changes your Adapty configuration.
+
+<details>
+<summary>About Adapty</summary>
+
+Adapty runs mobile in-app subscriptions and paywall analytics — revenue, conversion, retention, and paywall A/B tests across iOS and Android. It’s where subscription growth and paywall performance are measured.
+</details>
+
+## One connection, not seven
+
+The reason to read Adapty through HeyMetra rather than through a server that only knows Adapty is everything else it can answer in the same breath:
 
 **Ads** — [Google Ads](https://heymetra.com/connectors/google-ads/) · [Meta](https://heymetra.com/connectors/meta-ads/)
 
@@ -254,17 +264,17 @@ One connection answers across accounts — which is the point, because spend liv
 
 **Channels** — [Slack](https://github.com/zeisoft/slack-mcp) · [Telegram](https://github.com/zeisoft/telegram-mcp)
 
-The full catalogue, with what each one can do today, is at [heymetra.com/connectors/](https://heymetra.com/connectors/).
+The full catalogue is at [heymetra.com/connectors/](https://heymetra.com/connectors/).
 
 ## Links
 
-- [Adapty connector page](https://heymetra.com/connectors/adapty/) — the source this page is generated from
+- [Adapty connector page](https://heymetra.com/connectors/adapty/)
 - [HeyMetra](https://heymetra.com/) — what the product is
-- [Setup per assistant](https://heymetra.com/mcp/) — eight clients, step by step
+- [Setup for every assistant](https://heymetra.com/mcp/)
 - [Security and limits](https://heymetra.com/security/)
-- [Pricing](https://heymetra.com/pricing/) — paid, no free plan and no trial
+- [Pricing](https://heymetra.com/pricing/)
 - [HeyMetra's own repository](https://github.com/zeisoft/heymetra-mcp)
 
 ---
 
-<sub>This README is generated from HeyMetra's live connector catalogue and refreshed daily; it is committed only when something in it actually changed. Corrections are welcome as issues. Built by <a href="https://zeisoft.com">Zeisoft</a>.</sub>
+<sub>Built by <a href="https://zeisoft.com">Zeisoft</a>, who make HeyMetra. Not affiliated with Adapty. This README is generated from HeyMetra's live connector catalogue and refreshed daily; corrections are welcome as issues.</sub>
