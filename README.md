@@ -250,7 +250,7 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Adapty
 
-Connect with each app's secret key — an Adapty key belongs to one app, so a portfolio is one connection per app — and your MCP client gets three tools: one headline call — revenue, MRR, active subscriptions and new trials for a period — and one that returns a single metric as a total plus a day-by-day series: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscription and trial counts by lifecycle event, refunds, and installs. One more compares every connected app on a single metric — which app earns what — with a total per currency and any app that could not answer named rather than dropped. Paywall and A/B figures are not among the metrics HeyMetra reads today. Revenue is dated by transaction and sits before the store's fee, so an answer states which basis it used rather than letting you compare it with cohort-based ad figures by accident. Read-only: no tool changes your Adapty configuration.
+Connect with each app's secret key — an Adapty key belongs to one app, so a portfolio is one connection per app — and your MCP client gets one tool that composes Adapty's analytics: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscription and trial counts by lifecycle event, refunds and installs, each as a total plus a day-by-day series. The same call filters by store, so an app that ships on both can be asked about the App Store and Google Play separately instead of only about the two added together. Paywall and A/B figures are not among the metrics this connector reads today. Revenue is dated by transaction and sits before the store's fee, so an answer states which basis it used rather than letting you compare it with cohort-based ad figures by accident. An Adapty secret key cannot be split into a read half and a write half, so HeyMetra asks you at connect time whether this connection may change anything.
 
 <details>
 <summary>About Adapty</summary>
@@ -264,13 +264,15 @@ The reason to read Adapty through HeyMetra rather than through a server that onl
 
 **Ads** — [Google Ads](https://heymetra.com/connectors/google-ads/) · [Meta](https://heymetra.com/connectors/meta-ads/)
 
-**Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp)
+**Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
 **Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
 
 **Revenue & CRM** — [Stripe](https://heymetra.com/connectors/stripe/) · [HubSpot](https://heymetra.com/connectors/hubspot/) · [Zoho CRM](https://github.com/zeisoft/zoho-crm-mcp) · [Zoho SalesIQ](https://github.com/zeisoft/zoho-salesiq-mcp) · [Zoho Marketing Automation](https://github.com/zeisoft/zoho-marketing-automation-mcp)
 
 **Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://heymetra.com/connectors/revenuecat/) · **Adapty** · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
+
+**Work** — [Google Calendar](https://heymetra.com/connectors/google-calendar/) · [Google Meet](https://heymetra.com/connectors/google-meet/) · [Jira](https://github.com/zeisoft/jira-mcp)
 
 **Channels** — [Slack](https://github.com/zeisoft/slack-mcp) · [Telegram](https://github.com/zeisoft/telegram-mcp)
 
