@@ -41,7 +41,7 @@ No dashboard, no export, no query language. You ask in the assistant you already
 
 Sign in at app.adapty.io and pick the app from the switcher at the top. An Adapty key belongs to ONE app, so the app you are looking at now is the app this connection will answer for.
 
-> A portfolio is one connection per app, not one for the account. Five apps means doing this five times, and each connection gets its own name here — which is what you will call it when you ask a question about it.
+> A portfolio is one connection per app, not one for the account. Five apps means doing this five times, and each connection gets its own name here, which is what you will call it when you ask a question about it.
 
 **2. Go to App settings → General and find Api keys**
 
@@ -51,13 +51,13 @@ It is at app.adapty.io/settings/general. Scroll to the section headed Api keys; 
 
 **3. Copy the Secret Key**
 
-The one that starts with secret_live_. Not the one that starts with public_live_ — that is the Public SDK Key, it belongs inside your app, and it cannot read any of these figures.
+The one that starts with secret_live_. Not the one that starts with public_live_: that is the Public SDK Key, it belongs inside your app, and it cannot read any of these figures.
 
 > If you paste the public one HeyMetra will say so by name rather than letting Adapty answer with a bare login error.
 
 **4. Paste it into HeyMetra and give the connection a name**
 
-On the Connections screen choose Adapty, paste the key, and name it after the app — 'Cleanr', not 'Adapty'. The key goes to the vault and is never shown again; HeyMetra proves it works before saving anything, so a rejected key never leaves a connection that looks healthy.
+On the Connections screen choose Adapty, paste the key, and name it after the app, such as 'Cleanr' rather than 'Adapty'. The key is stored encrypted and never shown again. HeyMetra checks it works before saving anything, so a rejected key never leaves a connection that looks healthy.
 
 **5. Add HeyMetra to the assistant you use**
 
@@ -100,7 +100,7 @@ Full walkthrough: [heymetra.com/mcp/claude/](https://heymetra.com/mcp/claude/)
 
 Paste the address above into Settings → Security and login → Developer mode, then chatgpt.com/plugins.
 
-_The endpoint has to include its /mcp path here._
+_The address has to end in /mcp here._
 
 Full walkthrough: [heymetra.com/mcp/chatgpt/](https://heymetra.com/mcp/chatgpt/)
 </details>
@@ -161,7 +161,7 @@ Full walkthrough: [heymetra.com/mcp/codex/](https://heymetra.com/mcp/codex/)
 }
 ```
 
-_Leave the static OAuth fields empty — they exist for servers that cannot register themselves._
+_Leave the static OAuth fields empty; HeyMetra does not need them._
 
 Full walkthrough: [heymetra.com/mcp/cursor/](https://heymetra.com/mcp/cursor/)
 </details>
@@ -177,26 +177,26 @@ Full walkthrough: [heymetra.com/mcp/cursor/](https://heymetra.com/mcp/cursor/)
 }
 ```
 
-_The key is serverUrl, not url — the one every other JSON client spells differently._
+_The key is serverUrl, not url, unlike every other JSON client._
 
 Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antigravity/)
 </details>
 
 ## What it may and may not touch
 
-Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 
 Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
 
 | Permission | What it covers | Changes anything? |
 |---|---|---|
-| **Direct API access** | Let your assistant use this account's own API for anything HeyMetra's other operations do not cover. It reads directly, and what comes back is the provider's own answer rather than a figure HeyMetra has checked. It can also propose changes — those are never applied until you approve them, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
+| **Full account access** | Lets your assistant read anything in this account to answer your questions. The figures are the provider's own, not ones HeyMetra has checked. It can also propose changes: none is applied until you approve it, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
 
 <details>
 <summary>What each permission lets an assistant do, in full</summary>
 
-- Ask this account's own API a question HeyMetra's other operations do not cover. Reads only, and the answer is the provider's own rather than a figure HeyMetra has checked.
-- Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+- Ask anything about this account and get the answer from its live data. Reads only, and the figures are the provider's own rather than ones HeyMetra has checked.
+- Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
 
 Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: ±50% on a budget, 5 campaigns per action and 20 changes a rolling day, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
@@ -215,7 +215,7 @@ Anything that would change something comes back as a proposal you approve, insid
 <details>
 <summary>A connection that worked for months suddenly answers with a login error.</summary>
 
-**Why:** Somebody generated a new key in Adapty and deleted the old one. Generating alone does not break anything — pressing the trash icon beside the previous key does.
+**Why:** Somebody generated a new key in Adapty and deleted the old one. Generating alone does not break anything; pressing the trash icon beside the previous key does.
 
 **Fix:** Copy the current Secret Key from App settings → General and paste it into this connection with the pencil. The connection keeps its name and everything pointing at it.
 
@@ -226,7 +226,7 @@ Anything that would change something comes back as a proposal you approve, insid
 
 **Why:** That is the Developer CLI token, from Settings → Developer API. It authorises the command-line tool and nothing else.
 
-**Fix:** Use the Secret Key from App settings → General instead — it starts with secret_live_ and is copied, not issued by a login flow.
+**Fix:** Use the Secret Key from App settings → General instead. It starts with secret_live_ and is copied, not issued by a login flow.
 
 </details>
 
@@ -244,18 +244,18 @@ Anything that would change something comes back as a proposal you approve, insid
 
 **Why:** Adapty's analytics API allows two requests a second per key, and a question that spans several charts or several apps makes one call each.
 
-**Fix:** Ask again — HeyMetra reports a rate limit as a temporary gap rather than as no data, so the figure is not quietly replaced by a zero.
+**Fix:** Ask again. HeyMetra reports a busy moment as a temporary gap rather than as no data, so the figure is never quietly replaced by a zero.
 
 </details>
 
 ## What HeyMetra reads from Adapty
 
-Connect with each app's secret key — an Adapty key belongs to one app, so a portfolio is one connection per app — and your MCP client gets one tool that composes Adapty's analytics: revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscription and trial counts by lifecycle event, refunds and installs, each as a total plus a day-by-day series. The same call filters by store, so an app that ships on both can be asked about the App Store and Google Play separately instead of only about the two added together. Paywall and A/B figures are not among the metrics this connector reads today. Revenue is dated by transaction and sits before the store's fee, so an answer states which basis it used rather than letting you compare it with cohort-based ad figures by accident. An Adapty secret key cannot be split into a read half and a write half, so HeyMetra asks you at connect time whether this connection may change anything.
+Connect with each app's secret key. An Adapty key belongs to one app, so a portfolio is one connection per app. Then ask your assistant about revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscriptions and trials, refunds and installs, each as a total and day by day. An app that ships on both stores can be asked about the App Store and Google Play separately instead of only about the two added together. HeyMetra does not read paywall and A/B figures. Revenue is dated by transaction and sits before the store's fee, and every answer states its basis so it is not compared with cohort-based ad figures by accident. When you connect, you choose whether your assistant may also propose changes.
 
 <details>
 <summary>About Adapty</summary>
 
-Adapty runs mobile in-app subscriptions and paywall analytics — revenue, conversion, retention, and paywall A/B tests across iOS and Android. It’s where subscription growth and paywall performance are measured.
+Adapty runs mobile in-app subscriptions and paywall analytics: revenue, conversion, retention, and paywall A/B tests across iOS and Android. It’s where subscription growth and paywall performance are measured.
 </details>
 
 ## One connection, not seven
