@@ -250,7 +250,7 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Adapty
 
-Connect with each app's secret key. An Adapty key belongs to one app, so a portfolio is one connection per app. Then ask your assistant about revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscriptions and trials, refunds and installs, each as a total and day by day. An app that ships on both stores can be asked about the App Store and Google Play separately instead of only about the two added together. HeyMetra does not read paywall and A/B figures. Revenue is dated by transaction and sits before the store's fee, and every answer states its basis so it is not compared with cohort-based ad figures by accident. When you connect, you choose whether your assistant may also propose changes.
+Connect with each app's secret key. An Adapty key belongs to one app, so a portfolio is one connection per app. Then ask your assistant about revenue, proceeds, net revenue, MRR, ARR, ARPU, ARPPU, subscriptions and trials, refunds and installs, each as a total and day by day. An app that ships on both stores can be asked about the App Store and Google Play separately instead of only about the two added together. Revenue is dated by transaction and sits before the store's fee, so it does not line up with cohort-based ad figures. When you connect, you choose whether your assistant may also propose changes.
 
 <details>
 <summary>About Adapty</summary>
@@ -270,7 +270,7 @@ The reason to read Adapty through HeyMetra rather than through a server that onl
 
 **Revenue & CRM** — [Stripe](https://heymetra.com/connectors/stripe/) · [HubSpot](https://heymetra.com/connectors/hubspot/) · [Zoho CRM](https://github.com/zeisoft/zoho-crm-mcp) · [Zoho SalesIQ](https://github.com/zeisoft/zoho-salesiq-mcp) · [Zoho Marketing Automation](https://github.com/zeisoft/zoho-marketing-automation-mcp)
 
-**Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://heymetra.com/connectors/revenuecat/) · **Adapty** · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
+**Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://github.com/zeisoft/revenuecat-mcp) · **Adapty** · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
 
 **Work** — [Google Calendar](https://heymetra.com/connectors/google-calendar/) · [Google Meet](https://heymetra.com/connectors/google-meet/) · [Jira](https://github.com/zeisoft/jira-mcp)
 
